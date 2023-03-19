@@ -6,6 +6,7 @@
 class NaturalNamEx(Exception):
     pass
 
+
 try:
     num = int(input('Введите натуральное число n: '))
     if num <= 0:
@@ -18,9 +19,9 @@ except NaturalNamEx:
     exit(0)
 
 i = 0
-while 2**i <= num:
-    print(2**i)
-    i+=1
+while 2 ** i <= num:
+    print(2 ** i)
+    i += 1
 
 # # В случае если n - задает кол-во выводимых степеней двойки.
 # print('')
