@@ -56,7 +56,7 @@ def goods_printing(goods_array):
 
 goods = list()
 
-print('Хотите добавить товар? (1 - да, 0 - нет):')
+print('Хотите добавить товар? (1 - да, 0 - нет): ', end='')
 try:
     question = value_check()
     if question != 0 and question != 1:
