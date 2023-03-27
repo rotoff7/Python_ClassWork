@@ -11,12 +11,12 @@
 # находясь перед некоторым кустом заданной во входном файле грядки.
 
 
-
-
 import random
+
 
 class IncorrectValue(Exception):
     pass
+
 
 def value_check():
     try:
@@ -30,18 +30,21 @@ def value_check():
         print('Введено некорректное значение.')
         exit(0)
     else:
-         return(val)
-    
+        return (val)
+
+
 def bushes_filling(hom_many):
     harvest_array = [random.randint(1, 50) for i in range(hom_many)]
     return harvest_array
 
+
 def from_3_bushes_harvest(array):
     result_list = list()
     for i in range(len(array) - 1):
-        result_list.append(array[i-1] + array[i] + array[i+1])
+        result_list.append(array[i - 1] + array[i] + array[i + 1])
     result_list.append(array[len(array) - 2] + array[len(array) - 1] + array[0])
     return result_list
+
 
 print('Введите кол-во кустов: ')
 bushes_num = value_check()

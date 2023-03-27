@@ -6,6 +6,7 @@
 class IncorrectValue(Exception):
     pass
 
+
 def value_check():
     try:
         val = int(input())
@@ -18,11 +19,13 @@ def value_check():
         print('Введено некорректное значение.')
         exit(0)
     else:
-         return(val)
+        return (val)
+
 
 def set_filling(set_size):
     new_array = [int(input()) for i in range(set_size)]
     return new_array
+
 
 print('Введите размер первого набора чисел: ', end='')
 array1_size = value_check()
