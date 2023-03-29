@@ -30,7 +30,7 @@ def value_check():
         return val
 
 
-def even_odd_count(num, even_count = 0, odd_count=0):
+def even_odd_count(num, even_count=0, odd_count=0):
     if num == 0:
         result_tuple = (even_count, odd_count)
         return result_tuple
