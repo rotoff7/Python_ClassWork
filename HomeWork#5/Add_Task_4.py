@@ -10,6 +10,7 @@
 class NaturalNum(Exception):
     pass
 
+
 def value_check():
     try:
         val = int(input('Введите кол-во элементов ряда: '))
@@ -22,7 +23,8 @@ def value_check():
     else:
         return val
 
-def row_sum(quantity, start_point = 1, index = 1):
+
+def row_sum(quantity, start_point=1, index=1):
     if quantity == 1:
         if index % 2 == 0:
             start_point = start_point * -1
