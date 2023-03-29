@@ -13,12 +13,12 @@ def value_check():
         exit(0)
     else:
         return val
-    
+
+
 def num_degree(num1, num2):
     if num2 == 1:
         return num1
     return num1 * num_degree(num1, num2 - 1)
-
 
 
 print('Введите целое число A: ')
