@@ -6,27 +6,30 @@
 # 2 2
 #     4 
 
-class Positive_Nums(Exception):
+class PositiveNums(Exception):
     pass
+
 
 def value_check():
     try:
         val = int(input())
         if val < 0:
-            raise Positive_Nums
+            raise PositiveNums
     except ValueError:
         print("Введено некорректное значение.")
         exit(0)
-    except Positive_Nums:
+    except PositiveNums:
         print("Введено некорректное значение.")
         exit(0)
     else:
         return val
-    
+
+
 def num_sum(num1, num2):
     if num1 == 0:
         return num2
     return 1 + num_sum(num1 - 1, num2)
+
 
 print('Введите целое число A: ')
 num_a = value_check()
