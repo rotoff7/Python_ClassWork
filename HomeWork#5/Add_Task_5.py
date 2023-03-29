@@ -16,12 +16,12 @@
 # Допускается исп-е встроенных ф-ций
 
 
-def print_asc_table(char_code = 32, count = 1):
+def print_asc_table(char_code=32, count=1):
     if char_code == 127:
         print(f'{char_code} - {chr(char_code)}')
         return
     if count % 10 != 0:
-        print(f'{char_code} - {chr(char_code)}', end =' ')
+        print(f'{char_code} - {chr(char_code)}', end=' ')
     else:
         print(f'{char_code} - {chr(char_code)}')
     print_asc_table(char_code + 1, count + 1)
