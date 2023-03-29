@@ -24,16 +24,23 @@ def value_check():
     else:
         return val
 
-# Разворот числа, без учета незначимых нулей
-def num_reverse(num, rev_num = 0, zero_count = 0):
-    if num == 0:
-        return rev_num, zero_count
-    if num % 10 == 0:
-        zero_count += 1
-    rev_num = rev_num * 10 + num % 10
-    return num_reverse(num//10, rev_num, zero_count)
 
-# С учетом незначимых нулей
+# Разворот числа, без учета незначимых нулей
+def num_reverse(num, rev_num=0):
+    if num == 0:
+        return rev_num
+    rev_num = rev_num * 10 + num % 10
+    return num_reverse(num // 10, rev_num)
+
+
+# Подсчет незначимых в реверсе нулей
+def zero_counter(num):
+    if num % 10 != 0:
+        return 0
+    return 1 + zero_counter(num // 10)
+
+
+# Учет незначимых нулей в виде дополнения к числу
 def adding_zero(zeroes):
     if zeroes == 1:
         return '0'
@@ -41,8 +48,8 @@ def adding_zero(zeroes):
 
 
 user_num = value_check()
-result, how_many_zero = num_reverse(user_num)
-
+result = num_reverse(user_num)
+how_many_zero = zero_counter(user_num)
 if how_many_zero > 0:
     bonus_part = adding_zero(how_many_zero)
     result = bonus_part + str(result)
@@ -56,6 +63,7 @@ else:
 def num_reverse_optimal(num):
     return str(num) if num < 10 else str(num % 10) + num_reverse_optimal(num // 10)
 
+
 new_user_num = value_check()
 new_result = num_reverse_optimal(new_user_num)
-print(f'{user_num} --> {new_result}')
+print(f'{new_user_num} --> {new_result}')
