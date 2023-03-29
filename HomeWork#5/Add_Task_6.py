@@ -7,12 +7,14 @@
 
 import random
 
+
 class IncorrectRange(Exception):
     pass
 
+
 def value_check():
     try:
-        val = int(input('Введите число от 0 до 100:'))
+        val = int(input('Введите число от 0 до 100: '))
         if val < 0 or val > 100:
             raise IncorrectRange()
     except ValueError:
@@ -23,6 +25,7 @@ def value_check():
         exit(0)
     else:
         return val
+
 
 def find_num(num, counter):
     print(f'Осталось попыток: {counter}')
