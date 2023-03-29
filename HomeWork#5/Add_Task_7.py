@@ -13,6 +13,7 @@
 class NaturalNum(Exception):
     pass
 
+
 def value_check():
     try:
         val = int(input('Введите натуральное число: '))
@@ -25,17 +26,20 @@ def value_check():
     else:
         return val
 
+
 # Рекурсия
 def left_part(val):
     if val == 1:
         return val
     return val + left_part(val - 1)
 
+
 def parts_compare(left, right):
     if left == right:
         print(f'При значении n={user_num}, данное равенство: "1+2+3...n = n(n+1)/2" -> выполняется ({left} = {right}).')
     else:
         print(f'Равенство: "1+2+3...n = n(n+1)/2", при n={user_num}, не выполняется.')
+
 
 user_num = value_check()
 left_part_sum = left_part(user_num)
