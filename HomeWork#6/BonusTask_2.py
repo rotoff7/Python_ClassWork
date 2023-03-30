@@ -7,7 +7,6 @@
 # Реализуйте вариант без и с LC
 
 
-
 import random
 
 
@@ -49,7 +48,7 @@ def select_elems(array):
 
 # С LC
 def select_elems_lc(array):
-    new_list = [array[i] for i in range(1, len(array)) if array[i] > array[i-1]]
+    new_list = [array[i] for i in range(1, len(array)) if array[i] > array[i - 1]]
     return new_list
 
 

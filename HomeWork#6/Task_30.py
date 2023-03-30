@@ -15,7 +15,7 @@ def value_check():
 
 def arith_progression(first_el, difference, el_quantity):
     new_list = [first_el]
-    for i in range (1, el_quantity):
+    for i in range(1, el_quantity):
         new_list.append(new_list[i - 1] + difference)
     return new_list
 

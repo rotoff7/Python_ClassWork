@@ -36,6 +36,7 @@ def border_compare(l_b, r_b):
     except BorderException:
         exit('Правая граница не должна быть меньше левой.')
 
+
 print('Введите размер массива:')
 array_size = value_check()
 print('Введите нижнюю границу значений массива:')
@@ -47,9 +48,9 @@ border_compare(arr_min, arr_max)
 generated_array = array_filler(array_size, arr_min, arr_max)
 print(f'Получившийся исходный массив: {generated_array}')
 
-print('Введите левую границу значений искомых индексов:')
+print('Введите левую границу значений искомых элементов:')
 left_val_border = value_check()
-print('Введите правую границу значений искомых индексов:')
+print('Введите правую границу значений искомых элементов:')
 right_val_border = value_check()
 border_compare(left_val_border, right_val_border)
 
