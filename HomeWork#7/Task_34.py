@@ -20,7 +20,7 @@ def vowel_in_phrase(array, vow_arr):
         count = 0
         for i in range(len(el)):
             if el[i] in vow_arr:
-                count +=1
+                count += 1
         new_list.append(count)
     return new_list
 
