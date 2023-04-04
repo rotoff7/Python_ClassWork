@@ -22,9 +22,9 @@ def val_check():
 
 
 def road_param():
-    print('Введите длину дороги:')
+    print('Введите длину дороги (метры):')
     user_length = val_check()
-    print('Введите ширину дороги:')
+    print('Введите ширину дороги (метры):')
     user_width = val_check()
     return user_length, user_width
 
@@ -44,4 +44,4 @@ class Road:
 
 road_length, road_width = road_param()
 obj1 = Road(road_length, road_width)
-print(f'Масса, необходимая для покрытия всей дороги: {obj1.mass_of_asphalt()} т')
+print(f'Масса асфальта, необходимая для покрытия всей дороги: {obj1.mass_of_asphalt()} т')
