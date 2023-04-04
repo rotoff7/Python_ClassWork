@@ -27,13 +27,12 @@ class Matrix:
     def __init__(self, list_of_lists):
         self.lists_matrix = list_of_lists
 
-
     def __str__(self):
         new_string = ''
         for el in self.lists_matrix:
             for el2 in el:
                 new_string += f'{el2}  '
-            new_string +='\n'
+            new_string += '\n'
         return new_string
 
     # # Альтернативный вариант
@@ -58,7 +57,7 @@ class Matrix:
         return result_obj
 
 
-array= [[3, 5, 8, 3], [8, 3, 7, 1], [4, 5, 1, 8]]
+array = [[3, 5, 8, 5], [8, 3, 7, 2], [4, 5, 1, 7]]
 array2 = [[2, 5, 1, 2], [2, 4, 7, 5], [2, 5, 1, 9]]
 
 first_matrix = Matrix(array)
