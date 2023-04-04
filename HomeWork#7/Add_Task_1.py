@@ -14,8 +14,8 @@
 # Проверить работу примера, создав экземпляр и вызвав описанный метод.
 
 
-
 import time
+
 
 class TrafficLight:
     __color = ['red', 'yellow', 'green']
