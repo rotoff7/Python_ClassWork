@@ -29,25 +29,19 @@ def road_param():
     return user_length, user_width
 
 
-# Можно ли помещать НОВЫЕ параметры необходимые для конкретной функции в виде их вызова в теле самой функции?
 class Road:
+    square_meter = 25
+    depth = 0.05
 
     def __init__(self, length, width):
         self._length = length
         self._width = width
 
     def mass_of_asphalt(self):
-        square_meter = int(input('Введите массу асфальта для покрытия одного метра: '))
-        depth = float(input('Введите толщину покрытия в метрах (0.05): '))
-        res = self._length * self._width * square_meter * depth
+        res = self._length * self._width * self.square_meter * self.depth
         return int(res / 1000)
 
 
 road_length, road_width = road_param()
 obj1 = Road(road_length, road_width)
 print(f'Масса, необходимая для покрытия всей дороги: {obj1.mass_of_asphalt()} т')
-
-# # Попробовал сделать метод, вынеся часть параметров во вне.
-# def mass_of_asphalt(self, sq_meter, depth):
-#     res = self._length * self._width * sq_meter * depth
-#     return int(res / 1000)
