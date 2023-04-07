@@ -42,27 +42,35 @@ import csv
 import re
 
 
-def get_data(user_file):
-    with open(user_file, 'r') as read_f:
-        content = read_f.read()
-        os_prod_list = []
-        os_prod_reg = re.compile(r'Изготовитель системы:\s*\S*')
-        os_prod_list.append(os_prod_reg.findall(content)[0].split()[2])
-        os_prod_reg2 = re.compile(r'Название ОС:\s*\S*')
-        os_prod_list.append(os_prod_reg2.findall(content)[0].split()[2])
-        os_prod_reg3 = re.compile(r'Код продукта:\s*\S*')
-        os_prod_list.append(os_prod_reg3.findall(content)[0].split()[2])
-        os_prod_reg4 = re.compile(r'Тип системы:\s*\S*')
-        os_prod_list.append(os_prod_reg4.findall(content)[0].split()[2])
-        print(os_prod_list)
-        return os_prod_list
+def get_data(files):
+    res_array = [['Изготовитель системы', 'Название ОС', 'Код продукта', 'Тип системы']]
+    file_count = 1
+    for i in range(len(files)):
+        os_prod_list = [i + 1]
+        with open(files[i], 'r') as f_obj:
+            file_content = f_obj.read()
+            os_prod_reg = re.compile(r'Изготовитель системы:\s*\S*')
+            os_prod_list.append(os_prod_reg.findall(file_content)[0].split()[2])
+            os_prod_reg2 = re.compile(r'Название ОС:\s*\S*')
+            os_prod_list.append(os_prod_reg2.findall(file_content)[0].split()[2])
+            os_prod_reg3 = re.compile(r'Код продукта:\s*\S*')
+            os_prod_list.append(os_prod_reg3.findall(file_content)[0].split()[2])
+            os_prod_reg4 = re.compile(r'Тип системы:\s*\S*')
+            os_prod_list.append(os_prod_reg4.findall(file_content)[0].split()[2])
+            res_array.append(os_prod_list)
+    return res_array
 
 
-file1_list = get_data('info_1.txt')
+def write_to_csv(csv_name, data):
+    with open(csv_name, 'w') as csv_obj:
+        csv_obj_writer = csv.writer(csv_obj, quoting=csv.QUOTE_NONNUMERIC)
+        csv_obj_writer.writerows(data)
 
 
-
-
+files_to_read = ['info_1.txt', 'info_2.txt', 'info_3.txt']
+write_to_csv('data_report.csv', get_data(files_to_read))
+with open('data_report.csv') as f_n:
+    print(f_n.read())
 
 # os_prod_reg = re.compile(r'Изготовитель системы:\s*\S*')
 # os_prod_list.append(os_prod_reg.findall(data)[0].split()[2])
