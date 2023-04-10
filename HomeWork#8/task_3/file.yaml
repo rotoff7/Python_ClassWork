@@ -1,0 +1,13 @@
+items_price:
+  computer: 570ˆ
+  headset: 15ˆ
+  keyboard: 20ˆ
+  monitor: 100ˆ
+  mouse: 15ˆ
+items_quantity: 150
+new_items:
+- computer
+- monitor
+- keyboard
+- mouse
+- headset
