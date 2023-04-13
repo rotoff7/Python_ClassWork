@@ -17,13 +17,6 @@
 """
 
 
-# 1 версия. Тип данных: байты (b'\\u0440....)
-# def code_points(array):
-#     c_p_array = []
-#     for el in array:
-#         c_p_array.append(el.encode("unicode_escape", "utf-8"))
-#     return c_p_array
-
 def code_points(array):
     c_p_array = []
     for el in array:
